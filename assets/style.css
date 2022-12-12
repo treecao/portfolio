@@ -1,0 +1,407 @@
+/*acceptance criteria:
+- developer's name
+- recent photo or avatar
+- links to about me section
+- links to my work
+- links to how to contact
+- links must work & scroll to corresponding section
+- link to about my work, scrolls to a section with titled image of my applications
+- the images need to be larger in size than the others 
+- clicking on image of application deploys the app
+- responsive layout when resize the page or view on various screens/devices
+*/
+
+:root {
+    --pale-yellow: #f7f7e6;
+    --eggshell: #d9d7b1;
+    --teal: #bbd7d5;
+    --white: #fefaf6;
+    --slate-gray: #6c7c8b;
+    --black: #232320;
+    --pink: #e98887;
+
+}
+
+/* may remove ::selection {
+    background-color: var(--teal);
+    color: var(--white);
+}
+*/
+
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust:100%;
+}
+
+header,
+section, 
+footer {
+    margin: 40px;
+    flex: auto;
+    border-radius: 25px;
+    flex-wrap: wrap;
+    /*border: 2px dotted var(--slate-gray);*/
+    
+}
+
+header {
+    background-color: var(--white);
+    padding-top: 10px;
+    font-size: 45px;
+    text-align: center;
+    font-family: arial;
+}
+
+header ul {
+    list-style-type: none;
+  }
+  
+header ul li {
+display: inline-block;
+margin-left: 25px;
+}
+
+a {
+    color: var(--pink);
+    filter: drop-shadow(10px 10px 10px var(--pink));
+
+}
+
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+
+a:hover {
+    box-shadow: inset 0 0 0 0;
+    color: var(--teal);
+  }
+
+/*bouncing text*/
+/*body {
+    height: 100vh;
+    align-items: center;
+    justify-content:center;
+    display: flex;
+  } */
+  
+  .bouncing-text {
+    position: relative;
+    display: flex;
+    font-size: 70px;
+    font-family: arial black;  
+  }
+
+  .t, .r, .e, .ee, .end {
+    color: var(--pink);
+    text-shadow: 0 3px var(--pale-yellow), 0 5px var(--pale-yellow), 0 7px var(--pale-yellow);
+  }
+
+  @keyframes bounce {
+    0%   { transform: scale(1,1) translateY(0); }
+    10%  { transform: scale(1.1,.9) translateY(0); }
+    30%  { transform: scale(.9,1.1)   translateY(-55px);}
+    50%  { transform: scale(1.05,.95) translateY(0); }
+    58%  { transform: scale(1,1) translateY(-7px); }
+    65%  { transform: scale(1,1) translateY(0);}
+    100% { transform: scale(1,1) translateY(0);}
+}
+
+.t {
+animation: bounce 1s ease infinite;
+}
+
+.r {
+animation: bounce 1s ease infinite .1s;
+}
+
+.e {
+animation: bounce 1s ease infinite .2s;
+}
+
+.ee {
+animation: bounce 1s ease infinite .3s;
+}
+
+.end {
+animation: bounce 1s ease infinite .4s;
+}
+
+.bouncing-text:before, .bouncing-text:after {
+    content:"";
+    position: absolute;
+    background-color: rgba(0,0,0,0.4);
+    width: 50px;
+    height:5px;
+    border-radius:50%;
+    top:82px;
+    z-index:-1;
+  }
+  
+  .shadow, .shadow-two {
+    position: absolute;
+    top:82px;
+    z-index:-1;
+  }
+  
+  .shadow:before, .shadow:after, .shadow-two:before, .shadow-two:after {
+    content:"";
+    position: absolute;
+    background-color: rgba(0,0,0,0.4);
+    width: 50px;
+    height:5px;
+    border-radius:50%;
+    top:0;  
+  }
+  
+  .bouncing-text:before {
+    left:0;
+    animation: scale 1s linear infinite;
+  }
+  
+  @keyframes scale {
+    0% {transform: scaleX(1);}
+    25% {transform: scaleX(0.4);}
+    50% {transform: scaleX(1);}
+    75% {transform: scaleX(0.9);}
+    100% {transform: scaleX(1);}
+  }
+  
+  .bouncing-text:after {
+    left: 57px;
+    animation: scale 1s linear infinite .1s;
+  }
+  
+  .shadow:before {
+    left: 116px;
+    animation: scale 1s linear infinite .2s;
+  }
+  
+  .shadow:after {
+    left:175px;
+    animation: scale 1s linear infinite .3s;
+  }
+  
+  .shadow-two:before {
+    left:232px;
+    animation: scale 1s linear infinite .4s;
+  }
+  
+  .shadow-two:after {
+    left: 285px;
+    animation: scale 1s linear infinite .5s;
+  }
+
+  /*end bouncing*/
+
+body {
+    background-color: var(--white);
+}
+
+h1 {
+    font-size: 60px;
+    /*border: 1px solid black; */
+    padding: 100px;
+    width: 30%;
+    margin: 0;
+    float: left;
+
+    position: relative;
+    top: 100px;
+    left: 10%;
+}
+
+h3 {
+    font-size: 30px;
+    font-style: bold;
+}
+
+.subtext {
+    font-size:13px;
+}
+
+
+
+.theo {
+    border-radius: 300px;
+    background-color: var(--white);
+    box-shadow: 30px 30px 30px 30px var(--pale-yellow);
+    width: 350px;
+    height: 400px;
+    object-fit: cover;
+    position: relative;
+    right: -20%;
+    top: 100px;
+}
+
+.treepic-content {
+    display: none;
+    position: relative;
+    bottom: 5%;
+    left: 65%;
+    right: auto;
+    background-color: var(--white);
+    padding: .5em;
+    min-width: 10rem;
+}
+
+.treepic:hover .treepic-content {
+    display: block;
+    position: relative;
+}
+
+.portfolio-section {
+    background-size: auto;
+    background-image: linear-gradient(
+        var(--pink) 52.31%,
+       var(--pale-yellow) 100%);
+}
+
+.chibicow {
+    position: relative;
+    top: 110px;
+    left: 15%;
+    
+    max-width: 50%;
+    border-radius: 300px;
+    background-color: var(--white);
+    box-shadow: -30px 30px 30px 30px var(--pale-yellow);
+    width: 350px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.portfolio {
+    color: var(--pink);
+    display: inline-block;
+    flex-wrap: wrap;
+
+    position: relative;
+    right: -20%;
+    top: 100px;
+    text-align: right;
+
+    font-size: 60px;
+    padding: 200px;
+    width: 30%;
+    margin: 0;
+}
+
+
+.css-snippet-section {
+    background-size: auto;
+    background-color: var(--pale-yellow);
+
+}
+
+.css-snippet {
+    color: var(--pink);
+    display: inline-block;
+    flex-wrap: wrap;
+
+    position: relative;
+    right: -30%;
+    bottom: 0px;
+    text-align: right;
+
+    font-size: 60px;
+    padding: 60px;
+    width: 30%;
+    margin: 0;
+}
+
+.cheat {
+    position: relative;
+    right: -4%;
+    bottom: 10%;
+    padding: 10%;
+    max-width: 100%;
+    height: auto;
+}
+
+.about-section {
+    background-size: auto;
+    background-image: linear-gradient(
+        var(--pale-yellow) 52%,
+        var(--pink) 100%);
+}
+
+.about {
+    color: var(--pink);
+    display: inline-block;
+    flex-wrap: wrap;
+
+    position: relative;
+    right: 5%;
+    bottom: 100px;
+    text-align: left;
+
+    font-size: 60px;
+    padding: 200px;
+    width: 30%;
+    margin: 0;
+}
+
+.about-section img {
+    transform: rotate(20deg);
+    position: relative;
+    right: 2%;
+    bottom: 20%;
+    flex-wrap: wrap;
+}
+
+.climber {
+    position: relative;
+    right: 5%;
+    bottom: 100px;
+}
+
+footer {
+    background-color: var(--white);
+    color: var(--black);
+    text-align: left;
+    font-size: 20px;
+    display: inline-block;
+    flex-wrap: wrap;
+    
+}
+
+.chatbox {
+    max-width: 25%;
+}
+
+/*no longer need this .ychatbox img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  }
+  */
+
+.ychatbox div{
+    display: none;
+}
+
+.ychatbox div:target {
+    display: block;
+}
+
+@media screen and (max-width:1166px) {
+    .container{ padding:50px;}
+}
+@media screen and (max-width:1024px) {
+    .container{ padding:50px;}
+}
+@media screen and (max-width:980px) {
+    .container{ padding:50px;}
+}
+@media screen and (max-width:767px) {
+    .container{ padding:50px;}
+}
+@media screen and (max-width:599px) {
+    .container{ padding:50px;}
+}
+@media screen and (max-width:479px) {
+    .container{ padding:50px;}
+}
+@media screen and (max-width:374px) {
+.container{ padding:50px;}
+}
