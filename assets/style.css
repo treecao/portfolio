@@ -11,6 +11,7 @@
 - responsive layout when resize the page or view on various screens/devices
 */
 
+/* root colors */
 :root {
     --pale-yellow: #f7f7e6;
     --eggshell: #d9d7b1;
@@ -22,7 +23,7 @@
 
 }
 
-/* may remove ::selection {
+/* removed  ::selection {
     background-color: var(--teal);
     color: var(--white);
 }
@@ -39,7 +40,8 @@ section,
 footer {
     margin: 40px;
     border-radius: 25px;
-    /*  flex: auto;
+    /* troubleshooting -- save in case 
+    flex: auto;
     flex-wrap: wrap;
     border: 2px dotted var(--slate-gray);*/
     
@@ -62,6 +64,7 @@ display: inline-block;
 margin-left: 25px;
 }
 
+/* the following section creates a drop shadow on all anchored links & h2 */
 a{
     color: var(--pink);
     filter: drop-shadow(10px 10px 10px var(--pink));
@@ -232,8 +235,6 @@ h3 {
 .subtext {
     font-size:13px;
 }
-
-
 
 .theo {
     border-radius: 300px;
