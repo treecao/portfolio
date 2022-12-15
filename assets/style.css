@@ -38,10 +38,10 @@ header,
 section, 
 footer {
     margin: 40px;
-    flex: auto;
     border-radius: 25px;
+    /*  flex: auto;
     flex-wrap: wrap;
-    /*border: 2px dotted var(--slate-gray);*/
+    border: 2px dotted var(--slate-gray);*/
     
 }
 
@@ -62,7 +62,7 @@ display: inline-block;
 margin-left: 25px;
 }
 
-a {
+a{
     color: var(--pink);
     filter: drop-shadow(10px 10px 10px var(--pink));
 
@@ -78,6 +78,15 @@ a:hover {
     color: var(--teal);
   }
 
+h2:link { text-decoration: none; }
+h2:visited { text-decoration: none; }
+h2:hover { text-decoration: none; }
+h2:active { text-decoration: none; }
+
+h2:hover {
+    box-shadow: inset 0 0 0 0;
+    color: var(--teal);
+  }
 /*bouncing text*/
 /*body {
     height: 100vh;
@@ -203,7 +212,6 @@ h1 {
     font-size: 60px;
     /*border: 1px solid black; */
     padding: 100px;
-    width: 30%;
     margin: 0;
     float: left;
 
@@ -211,6 +219,10 @@ h1 {
     top: 100px;
     left: 10%;
 }
+
+/*.intro {
+    width: 250px;
+}*/
 
 h3 {
     font-size: 30px;
@@ -252,18 +264,15 @@ h3 {
 }
 
 .portfolio-section {
-    background-size: auto;
+    background-size: cover;
     background-image: linear-gradient(
         var(--pink) 52.31%,
        var(--pale-yellow) 100%);
 }
 
+
 .chibicow {
     position: relative;
-    top: 110px;
-    left: 15%;
-    
-    max-width: 50%;
     border-radius: 300px;
     background-color: var(--white);
     box-shadow: -30px 30px 30px 30px var(--pale-yellow);
@@ -276,15 +285,10 @@ h3 {
     color: var(--pink);
     display: inline-block;
     flex-wrap: wrap;
-
     position: relative;
-    right: -20%;
-    top: 100px;
-    text-align: right;
-
     font-size: 60px;
-    padding: 200px;
-    width: 30%;
+   /* padding: 200px;
+    width: 30%;*/
     margin: 0;
 }
 
@@ -297,26 +301,33 @@ h3 {
 
 .css-snippet {
     color: var(--pink);
+    text-align: center;
+    padding-top: 5%;
+    font-size: 60px;
+}
+
+/*.css-snippet {
+    color: var(--pink);
     display: inline-block;
     flex-wrap: wrap;
 
-    position: relative;
+    position: center;
     right: -30%;
     bottom: 0px;
-    text-align: right;
+    text-align: center;
 
     font-size: 60px;
     padding: 60px;
     width: 30%;
     margin: 0;
-}
+} */
 
 .cheat {
     position: relative;
     right: -4%;
     bottom: 10%;
     padding: 10%;
-    max-width: 100%;
+    max-width: 75%;
     height: auto;
 }
 
@@ -360,7 +371,7 @@ h3 {
 footer {
     background-color: var(--white);
     color: var(--black);
-    text-align: left;
+    text-align: center;
     font-size: 20px;
     display: inline-block;
     flex-wrap: wrap;
@@ -384,24 +395,59 @@ footer {
     display: block;
 }
 
-@media screen and (max-width:1166px) {
-    .container{ padding:50px;}
+/* big screen */
+@media (min-width: 577px) { 
+    h1{
+    width: 30%;}
+    .portfolio {
+        right: -20%;
+        top: 100px;
+        margin-top: 150px;
+        margin-bottom: 150px;
+        text-align: center;
+    }
+
+    .chibicow{
+        top: 110px;
+        left: 15%;
+    }
 }
-@media screen and (max-width:1024px) {
-    .container{ padding:50px;}
-}
-@media screen and (max-width:980px) {
-    .container{ padding:50px;}
-}
-@media screen and (max-width:767px) {
-    .container{ padding:50px;}
-}
-@media screen and (max-width:599px) {
-    .container{ padding:50px;}
-}
-@media screen and (max-width:479px) {
-    .container{ padding:50px;}
-}
-@media screen and (max-width:374px) {
-.container{ padding:50px;}
+
+/* small screen */
+@media (max-width: 576px) {
+     .header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    h1{
+        width: 100%;
+    }   
+    
+    .portfolio-section{
+        margin-top: 150px;
+    }
+
+    .portfolio{
+        text-align: center;
+        margin-top: 175px;
+        margin-bottom: 150px;
+        display: block;
+    }
+
+    .chibicowcontainer{
+        display: flex;
+        /*horizontal centering below */
+        justify-content: center;
+        /*vertical centering below */
+        align-items: center;
+        flex-direction: column;
+    }
+    .chibicow{
+        text-align: center;
+    }
+    
+   
 }
