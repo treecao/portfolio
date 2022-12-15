@@ -38,11 +38,11 @@ MIT License (see repo)
 
 - links must work & scroll to corresponding section (<i> they do :) </i>)
 
-- link to about my work, scrolls to a section with titled image of my applications (<i> it does :) </i>
+- link to about my work, scrolls to a section with titled image of my applications (<i> it does :) </i>)
 
-- the images need to be larger in size than the others (<i> they are :) </i>
+- the images need to be larger in size than the others (<i> they are :) </i>)
 
-- clicking on image of application deploys the app (<i> they do :) </i>
+- clicking on image of application deploys the app (<i> they do :) </i>)
 
 - responsive layout when resize the page or view on various screens/devices (<i>it does :)</i>)
 
